@@ -1,5 +1,5 @@
 const request = require('supertest');
-const server = require('../server');
+const server = require('.src/server.js');
 const { getProducts } = require('../src/models/products');
 
 // Start the server before running tests

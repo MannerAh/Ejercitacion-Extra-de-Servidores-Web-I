@@ -2,18 +2,23 @@ const { getProducts } = require('./models/products');
 
 // Maneja la ruta principal
 const handleHome = (req, res) => {
+  res.end('Bienvenid@s! Gracias por tu visita.')
 }
 
 // Maneja la ruta de productos
 const handleProducts = (req, res) => {
+  res.end(JSON.stringify(getProducts()))
 }
 
 // Maneja la ruta de contacto
 const handleContact = (req, res) => {
+  res.end('Escribenos al siguiente Email: hola@webserver.com :)')
 }
 
 // Maneja rutas no encontradas
 const handleNotFound = (req, res) => {
+  res.statusCode = 404;
+  res.end('No se ha encontrado la ruta ingresada.')
 }
 
 /**
@@ -24,7 +29,7 @@ function createServer() {
   const http = require('http');
   const server = http.createServer((req, res) => {
     // Maneja todas las rutas de la aplicación
-    const url = req.url;
+    const url = req.url 
   
     // Configurar los encabezados comunes
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
